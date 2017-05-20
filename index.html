@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SocialQuixadá | Perfil</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/skin-blue-light.min.css">
+
+</head>
+
+<body class="skin-blue-light layout-top-nav" >
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '295937407514778',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.9'
+      });
+      FB.AppEvents.logPageView();
+      profileCtrl.checkLogin();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="wrapper">
+    <header class="main-header">
+      <nav class="navbar navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand"><b>Social</b>Quixadá</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          </div>
+
+          <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input class="form-control" id="navbar-search-input" placeholder="Buscar" type="text">
+                </div>
+              </form>
+          </div>
+          <div class="navbar-custom-menu">
+            <a href="#" style="margin-top:5px; display:none" onclick="profileCtrl.login()" id="btn-login" class="btn btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Logue-se com o facebook</a>
+            <a href="#" style="margin-top:5px;display:none"  onclick="profileCtrl.logout()" id="btn-logout" class="btn btn-default btn-flat"> Logout</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <h1>
+          Perfil
+        </h1>
+      </section>
+
+      <section class="content">
+
+        <div class="row">
+          <div class="col-md-3">
+
+            <div class="box box-primary">
+              <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="img/user4-128x128.jpg" alt="User profile picture">
+
+                <h3 class="profile-username text-center"></h3>
+
+                <p class="text-muted text-center profile-user-job"></p>
+
+                <ul class="list-group list-group-unbordered">
+                  <li class="list-group-item">
+                    <b>Seguidores</b>
+                    <a class="pull-right user-followers"></a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Seguindo</b>
+                    <a class="pull-right user-folowing"></a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Amigos</b>
+                    <a class="pull-right user-friends"></a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Apresentação</h3>
+              </div>
+              <div class="box-body">
+                <strong><i class="fa fa-book margin-r-5"></i> Educação</strong>
+
+                <p class="text-muted profile-user-education">
+                </p>
+
+                <hr>
+
+                <strong><i class="fa fa-map-marker margin-r-5"></i> Localização</strong>
+
+                <p class="text-muted profile-user-location"></p>
+
+                <hr>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#activity" data-toggle="tab">Atividade</a></li>
+                <li><a href="#friends" data-toggle="tab">Amigos</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="active tab-pane" id="activity">
+                  <div class="post">
+                    <div class="user-block">
+                      <img class="img-circle img-bordered-sm" src="img/user1-128x128.jpg" alt="user image">
+                      <span class="username">
+                          <a href="#"></a>
+                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                        </span>
+                      <span class="description">Shared publicly - 7:30 PM today</span>
+                    </div>
+                    <p class="user-post-message">
+
+                    </p>
+                    <ul class="list-inline">
+                      <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Curtir</a>
+                        <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Compartilhar</a></li>
+                      </li>
+                      <li class="pull-right">
+                        <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
+                        (5)</a></li>
+                    </ul>
+
+                    <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+
+  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <script src="js/vendors/adminlte.min.js"></script>
+  <script src="js/LocalStorageConversor.js"></script>
+  <script src="js/LoginCtrl.js"></script>
+  <script src="js/ProfileCtrl.js"></script>
+  <script src="js/ProfileView.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
